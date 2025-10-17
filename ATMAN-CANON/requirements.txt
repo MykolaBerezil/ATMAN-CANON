@@ -1,0 +1,30 @@
+# ATMAN-CANON v5 Python Dependencies
+# Core web framework
+flask==3.0.0
+gunicorn==21.2.0
+
+# System monitoring
+psutil==5.9.6
+
+# Scientific computing
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.2.2
+
+# Networking and HTTP
+requests==2.32.3
+
+# Database connectivity
+psycopg2-binary==2.9.9
+redis==5.0.1
+
+# Configuration and utilities
+python-dotenv==1.0.1
+colorlog==6.8.0
+jsonschema==4.21.1
+
+# Development and testing (optional)
+pytest==7.4.3
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0

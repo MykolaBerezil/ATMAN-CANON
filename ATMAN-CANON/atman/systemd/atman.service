@@ -1,0 +1,19 @@
+[Unit]
+Description=ATMAN-CANON v5 Production Server
+After=network.target postgresql.service redis-server.service
+Requires=postgresql.service redis-server.service
+
+[Service]
+Type=notify
+User=atman
+Group=atman
+WorkingDirectory=/opt/atman/atman
+Environment=PATH=/opt/atman/venv/bin
+EnvironmentFile=/opt/atman/.env
+ExecStart=/opt/atman/venv/bin/gunicorn --bind 0.0.0.0:8080 --workers 2 --timeout 30 --keep-alive 2 --max-requests 1000 --max-requests-jitter 100 app:app
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
