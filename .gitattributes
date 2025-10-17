@@ -1,0 +1,7 @@
+*.py text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.pyc binary
+__pycache__/ binary
+*.py linguist-language=Python
+*.md linguist-language=Markdown
